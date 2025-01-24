@@ -1,2 +1,5 @@
-# PhotovoltaicEfficiencyVisualizer
-Visualizes key areas of effiency of a solar cell from a heatmap. 
+# Photovoltaic Efficiency Visualizer
+Visualizes key areas of effiency of a solar cell from a heatmap. In reality, a generated heatmap would not be used, but for testing and demonstration purposes this project randomly generates a heatmap resembling one of a solar cells efficiency with a few clusters of efficiency and some clusters of failure. The solarcell file reads in the generated heatmap and converts it to grayscale intensity using the formula: grayscale_intensity = 0.299 * df['R'] + 0.587 * df['G'] + 0.114 * df['B']. This allows each pixel on the heatmap to be measured in one value. Using the grayscale intensity, a derivative heatmap showing the areas where the slope is the most extreme is created. Both the derivative heatmap and the original heatmap are run through a function the edit the heatmap and draw on it to show the areas of interest, creating a new image with the areas of interest highlighted. Additionally, a correlation is run between the derivative and the original heatmap.
+
+
+While the areas of interest may seem obvious, it is important to be able to automate this when 1000s of solar cells are being tested for efficiency. 
